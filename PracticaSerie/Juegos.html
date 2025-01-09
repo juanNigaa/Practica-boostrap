@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @font-face {
+               font-family: 'Titulos'; /* Nombre que asignas a la fuente */
+               src: url('fuentes/south park.ttf') format('truetype'); /* Ruta a la fuente .ttf */
+               font-weight: normal;
+               font-style: normal;
+           }
+   
+           h1{
+               font-family: 'Titulos', sans-serif;
+           }
+           h3{
+               font-family: 'Titulos', sans-serif;
+               text-align: center;
+           }
+           .img {
+           max-width: 100%; /* Asegura que las imágenes no superen el ancho del contenedor */
+           height: auto; /* Mantiene la proporción original */
+           display: block;
+           margin: 0 auto; /* Centra las imágenes */
+       }
+   
+       .col-6 {
+           margin-bottom: 2em; /* Espaciado entre temporadas */
+       }
+   
+   
+       p {
+           text-align: justify; /* Texto justificado para mejor lectura */
+           margin: 0 10%; /* Agrega márgenes laterales */
+       }
+   
+       .temporada {
+           border: 1px solid #ccc; /* Bordes opcionales alrededor del bloque */
+           padding: 1em;
+           margin: 1em auto;
+           max-width: 800px; /* Limita el ancho del bloque */
+           border-radius: 10px;
+           background-color: #f9f9f9;
+       }
+       </style>
+   
 </head>
+
 <body>
+
     <h1>Hola</h1>
     <audio id="Intro" src="Sonidos/Tema3.mp3" preload="auto"></audio>
 
