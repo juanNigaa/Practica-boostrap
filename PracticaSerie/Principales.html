@@ -24,10 +24,10 @@
 
         .flip-card {
             perspective: 1000px; /* Efecto 3D */
-            width: 300px;
-            height: 600px;
-            position: relative;
-            max-height: 600px; /* Limita la altura de las tarjetas */
+            width: 100%; /* Ocupa todo el ancho disponible */
+            max-width: 400px; /* Tamaño máximo de la tarjeta */
+            height: 650px; /* Altura uniforme para todas las tarjetas */
+            margin: auto; /* Centrado */
         }
 
         .flip-card-inner {
@@ -54,8 +54,9 @@
         .flip-card-front img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ajusta la imagen sin recortarla */
-            background-color: #f0f0f0; /* Color de fondo para márgenes vacíos */
+            object-fit: contain; /* Ajusta la imagen para llenar el espacio */
+            padding: 10px 0; /* Agrega espacio arriba y abajo */
+            background-color: black;
         }
 
         .flip-card-back {
@@ -71,31 +72,33 @@
         }
 
         .card-title {
-            font-size: 18px;
+            font-size: 1rem; /* Tamaño uniforme */
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .card-text {
-            font-size: 14px;
+            font-size: 0.875rem; /* Tamaño de texto pequeño y consistente */
             margin-bottom: 15px;
+            text-align: justify; /* Mejora la apariencia del texto */
         }
 
-        .btn {
-            margin-top: 10px;
+        @media (max-width: 360px) {
+            .flip-card {
+                height: 350px; /* Ajusta la altura para pantallas pequeñas */
+            }
         }
 
-        .card-img-top {
-            width: 100%;
-            height: 60%; /* La imagen ocupa el 60% de la altura */
-            object-fit: contain;
+        @media (min-width: 361px) and (max-width: 600px) {
+            .flip-card {
+                height: 400px;
+            }
         }
 
-        .card-body {
-            height: 40%; /* El contenido ocupa el 40% de la altura */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        @media (min-width: 601px) {
+            .flip-card {
+                height: 450px; /* Para pantallas más grandes */
+            }
         }
 
         h1 {
@@ -119,13 +122,10 @@
                         <a class="nav-link active" href="index.html"><i class="bi bi-house"></i>Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="DatosCuriosos.html"><i class="bi bi-book"></i> Datos Curiosos</a>
+                        <a class="nav-link" href="DatosCuriosos.html"><i class="bi bi-book"></i>Recomendaciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Galeria.html"><i class="bi bi-camera"></i> Galeria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Juegos.html"><i class="bi bi-joystick"></i> Juegos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown" aria-expanded="false">
@@ -166,11 +166,12 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="Imagenes/kyle.png" alt="María José Guardiola">
+                                <img src="Imagenes/kyle.png" alt="Kyle Broflovski ">
                             </div>
                             <div class="flip-card-back">
                                 <h4 class="card-title">Kyle Broflovski</h4>
                                 <p class="card-text">Kyle, de ascendencia judía, es el más inteligente y ético del grupo. A menudo choca con Cartman debido a sus posturas opuestas.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
                             </div>
                         </div>
                     </div>
@@ -181,11 +182,12 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="Imagenes/stan.png" alt="Alfredo Lencina">
+                                <img src="Imagenes/stan.png" alt="Stan Marsh">
                             </div>
                             <div class="flip-card-back">
                                 <h4 class="card-title">Stan Marsh</h4>
                                 <p class="card-text">Stan es el más equilibrado y razonable del grupo. Representa un enfoque más lógico y empático en contraste con las locuras de sus amigos</p>
+                                <button class="play-sound-btn">Frase célebre</button>
                             </div>
                         </div>
                     </div>
@@ -196,11 +198,12 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="Imagenes/EricCartman.png" alt="Javier Dato">
+                                <img src="Imagenes/EricCartman.png" alt="Eric Cartman">
                             </div>
                             <div class="flip-card-back">
                                 <h4 class="card-title">Eric Cartman</h4>
                                 <p class="card-text">Eric es conocido por su personalidad fuerte, manipuladora y egoísta. Es el principal instigador de conflictos en el grupo y muchas veces hace comentarios ofensivos e inapropiados.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
                             </div>
                         </div>
                     </div>
@@ -211,18 +214,297 @@
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="Imagenes/kenny.png" alt="Elisa Moñino Ballesta">
+                                <img src="Imagenes/kenny.png" alt="Kenny McCormick">
                             </div>
                             <div class="flip-card-back">
                                 <h4 class="card-title">Kenny McCormick</h4>
                                 <p class="card-text">Kenny es el niño de clase trabajadora que constantemente muere en los primeros episodios, aunque siempre regresa sin explicación</p>
+                                <button class="play-sound-btn">Frase célebre</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Agrega más tarjetas aquí con la misma estructura -->
-
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/randy.png" alt="Randy marsh">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Randy Marsh</h4>
+                                <p class="card-text">Randy Marsh es el padre de Stan en South Park y un geólogo con una personalidad excéntrica y a menudo inmadura. Aunque se muestra como un adulto responsable, frecuentemente se ve involucrado en situaciones absurdas y caóticas</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/liane.png" alt="Liane Cartman">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Liane Cartman</h4>
+                                <p class="card-text">Liane Cartman es la madre de Eric Cartman en South Park. Es conocida por su naturaleza indulgente y permisiva, que le permite a su hijo ser extremadamente malcriado y egoísta. Liane es una mujer amable y relajada, pero a menudo se muestra incapaz de disciplinar adecuadamente a Cartman</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/butters.png" alt="Butters Stoch">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Butters Stoch</h4>
+                                <p class="card-text">Butters Stotch es uno de los personajes más tiernos y adorables de South Park. Es un niño ingenuo, optimista y extremadamente confiado, pero a menudo se ve atrapado en situaciones ridículas y problemáticas debido a su falta de malicia y su naturaleza fácilmente manipulable</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/clyde.png" alt="Clyde Donovan">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Clyde Donovan</h4>
+                                <p class="card-text"> Clyde es conocido por ser uno de los chicos más normales del grupo, pero a menudo se le muestra como algo torpe o sumiso. Aunque no tiene una personalidad tan destacada como otros personajes</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/craig.png" alt="Craig Tucker">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Craig Tucker</h4>
+                                <p class="card-text">es un personaje recurrente de South Park. Es un estudiante de la escuela primaria de South Park y se destaca principalmente por ser el reemplazo de Cartman como el líder de la clase en algunas ocasiones.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/tweek.png" alt="Tweek Tweak">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Tweek Tweak</h4>
+                                <p class="card-text">Tweek Tweak es un personaje de South Park conocido por su nerviosismo extremo y su hábito de beber grandes cantidades de café, lo que le da una personalidad aún más inquieta.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/sr garrison.png" alt="sr Garrison">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Señor garrison</h4>
+                                <p class="card-text">El Señor Garrison es uno de los personajes más complejos y controvertidos de South Park. A lo largo de la serie, Garrison ha experimentado múltiples transformaciones, tanto en su vida personal como en su identidad. Originalmente, Garrison era el maestro de la escuela primaria de South Park y tenía una personalidad egocéntrica, a menudo cruel y con una visión bastante conservadora y ridiculizadora de la sociedad.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/cheff.png" alt="Jeremiah Chef McElro">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Cheff</h4>
+                                <p class="card-text">Chef (Jeremiah "Chef" McElroy) es uno de los personajes más queridos y carismáticos de South Park. Es el cocinero de la escuela primaria de South Park y una figura paternal para los niños, especialmente para Stan, Kyle, Cartman y Kenny.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/jimmy.png" alt="Jimmy Valmer">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Jimmy Valmerk</h4>
+                                <p class="card-text">
+                                    Jimmy Valmer es un personaje de South Park conocido por su discapacidad física, que le causa un ligero problema de habla (tartamudeo), y por su actitud positiva y optimista. A pesar de sus dificultades, Jimmy es un chico decidido, con una gran pasión por el humor y el entretenimiento.</p>
+                                    <button class="play-sound-btn">Frase célebre</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/wendy.png" alt="Wenddy testaburguer">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Wenddy testaburguer</h4>
+                                <p class="card-text">Wendy Testaburger es uno de los personajes principales de South Park y la novia de Stan Marsh. Es una chica inteligente, responsable y muy decidida, a menudo representando una voz de razón dentro del grupo de niños</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/tolkien.png" alt="Tolkien Black">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Tolkien Black</h4>
+                                <p class="card-text">Tolkien Black es un personaje secundario en South Park y uno de los pocos estudiantes afroamericanos en la escuela primaria de South Park. Es un chico tranquilo y educado</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/Director pc.png" alt="Director PC">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Director PC</h4>
+                                <p class="card-text">Director PC (Director Politically Correct) es un personaje de South Park introducido en la temporada 19, en un episodio titulado "Stunning and Brave". Es el director de la escuela primaria de South Park y representa una parodia de la cultura de la corrección política, que se ha vuelto un tema recurrente en los debates sociales y políticos.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/sharon.png" alt="Sharon Marsh">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Sharon Marsh</h4>
+                                <p class="card-text">haron Marsh es la madre de Stan Marsh y la esposa de Randy Marsh en South Park. Es una mujer inteligente, razonable y a menudo la voz de la sensatez dentro de la familia, especialmente en comparación con las actitudes impulsivas y a veces absurdas de su esposo Randy</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/sheila.png" alt="sheila Broflovski">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Kenny McCormick</h4>
+                                <p class="card-text">Sheila Broflovski es la madre de Kyle Broflovski y esposa de Gerald Broflovski en South Park. Es una mujer muy apasionada, generalmente racional, pero también es conocida por sus reacciones extremas y su tendencia a involucrarse en cuestiones sociales y políticas de manera muy intensa.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/gerad.png" alt="Gerad Broflovski">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Gerad Broflovski</h4>
+                                <p class="card-text">Gerald Broflovski es el padre de Kyle Broflovski y esposo de Sheila Broflovski en South Park. Es un hombre inteligente, educado y generalmente racional, pero a menudo se ve atrapado en situaciones cómicas debido a su relación con su esposa Sheila y su hijo Kyle</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/stephen.png" alt="stephen Stoch">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Stephen Stoch</h4>
+                                <p class="card-text">Stephen Stotch es el padre de Butters Stotch en South Park. Es un personaje que, a menudo, se presenta como un hombre tranquilo, amable y un tanto sumiso, especialmente en su relación con su esposa, Linda</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/mrkay.png" alt="Mrkay">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Mrkay</h4>
+                                <p class="card-text">Mr. Mackey es el consejero escolar de South Park, conocido por su frase característica "M'kay" que utiliza en casi todas sus intervenciones. Es un personaje tranquilo y racional, aunque a menudo se ve envuelto en situaciones cómicas y absurdas.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/sr esclavo.png" alt="Sr esclavo">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Sr esclavo</h4>
+                                <p class="card-text">Sr. Esclavo es un personaje secundario en South Park, conocido por ser el mayordomo y sirviente de Mr. Garrison. Es un hombre que, a pesar de su relación con Garrison, se presenta de manera sumisa y obediente, siempre dispuesto a seguir órdenes</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/scout malkison.png" alt="Scout malkison">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Scout malkison</h4>
+                                <p class="card-text">Scout Master Malkinson es un personaje de South Park que aparece como el líder de los Boy Scouts en varios episodios. Es conocido por ser un líder estricto y a menudo un poco torpe. En su rol</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="Imagenes/D Victoria.png" alt="Directora Victoria">
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="card-title">Directora Victoria</h4>
+                                <p class="card-text">Directora Victoria es la directora de la escuela primaria de South Park. Es un personaje que, aunque no tiene tanto protagonismo como otros, se muestra como una figura autoritaria y responsable en el entorno escolar. Su papel como directora la convierte en una autoridad en la escuela, encargada de mantener el orden y supervisar los eventos que afectan a los estudiantes.</p>
+                                <button class="play-sound-btn">Frase célebre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -275,16 +557,7 @@
                 </div>
             </div>
         </div>
-    
-        <!-- Parte adicional del footer -->
-        <div class="container-fluid bg-dark text-light py-2">
-            <div class="container text-center">
-                <p>2024 SOUTH PARK STUDIOS | TODOS LOS DERECHOS RESERVADOS | UN SITIO PARA LOS FANS DE SOUTH PARK</p>
-            </div>
-        </div>
     </footer>
-
-
     <audio id="Intro" src="Sonidos/Tema1.mp3" preload="auto"></audio>
     <script>
         
