@@ -187,7 +187,7 @@
                             <div class="flip-card-back">
                                 <h4 class="card-title">Stan Marsh</h4>
                                 <p class="card-text">Stan es el más equilibrado y razonable del grupo. Representa un enfoque más lógico y empático en contraste con las locuras de sus amigos</p>
-                                <button class="play-sound-btn">Frase célebre</button>
+                                <button class="play-sound-btn" onclick="playSound4()">Frase célebre</button>
                             </div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                             <div class="flip-card-back">
                                 <h4 class="card-title">Eric Cartman</h4>
                                 <p class="card-text">Eric es conocido por su personalidad fuerte, manipuladora y egoísta. Es el principal instigador de conflictos en el grupo y muchas veces hace comentarios ofensivos e inapropiados.</p>
-                                <button class="play-sound-btn">Frase célebre</button>
+                                <button class="play-sound-btn" onclick="playSound2()">Frase célebre</button>
                             </div>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
                             <div class="flip-card-back">
                                 <h4 class="card-title">Kenny McCormick</h4>
                                 <p class="card-text">Kenny es el niño de clase trabajadora que constantemente muere en los primeros episodios, aunque siempre regresa sin explicación</p>
-                                <button class="play-sound-btn">Frase célebre</button>
+                                <button class="play-sound-btn" onclick="playSound()">Frase célebre</button>
                             </div>
                         </div>
                     </div>
@@ -458,7 +458,7 @@
                             <div class="flip-card-back">
                                 <h4 class="card-title">Mrkay</h4>
                                 <p class="card-text">Mr. Mackey es el consejero escolar de South Park, conocido por su frase característica "M'kay" que utiliza en casi todas sus intervenciones. Es un personaje tranquilo y racional, aunque a menudo se ve envuelto en situaciones cómicas y absurdas.</p>
-                                <button class="play-sound-btn">Frase célebre</button>
+                                <button class="play-sound-btn" onclick="playSound3()">Frase célebre</button>
                             </div>
                         </div>
                     </div>
@@ -560,6 +560,33 @@
     </footer>
     <audio id="Intro" src="Sonidos/Tema1.mp3" preload="auto"></audio>
     <script>
+
+        function playSound() {
+        
+        var audio = new Audio('Audios/Kenny.mp3');
+        audio.play();
+                }
+        
+        function playSound2() {
+        
+        var audio = new Audio('Audios/Cartman.mp3');
+        audio.play();
+        }
+
+        function playSound3() {
+        
+        var audio = new Audio('Audios/Mrmackey.mp3');
+        audio.play();
+        }
+
+        function playSound4() {
+        
+        var audio = new Audio('Audios/Stan.mp3');
+        audio.play();
+        }
+
+
+        
         
         window.onload = function() {
             var audio = document.getElementById('Intro');
